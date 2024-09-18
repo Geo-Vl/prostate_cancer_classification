@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.x
+        python-version: '3.x'
 
     - name: Install kaggle
       run: pip install kaggle
@@ -25,7 +25,7 @@ jobs:
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-      run: kaggle kernels pull <KAGGLE_USERNAME>/<https://www.kaggle.com/code/georgevlch/pnd-densenet-14-256x256> -p .
+      run: kaggle kernels pull georgevlch/pnd-densenet-14-256x256 -p .
 
     - name: Commit and push changes
       run: |
