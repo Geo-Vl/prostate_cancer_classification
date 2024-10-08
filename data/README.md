@@ -17,11 +17,17 @@ This directory contains the data required for the project. Due to file size limi
    OR
    
 2. Use the Kaggle API to download the dataset
-   
-    ### Step 1: Install Kaggle API
+
+  ### Step 1: Install Kaggle API
 
       If you haven't already, you can install the Kaggle API by running:
       
       ```bash
       pip install kaggle
+
+  ### Step 2: Set Up Your Kaggle API Credentials
+
+      - Go to your Kaggle account and navigate to **Account** settings.
+      - Under the **API section**, click on **Create New API Token**.
+      - This will download a file named kaggle.json, which contains your API credentials.
 
