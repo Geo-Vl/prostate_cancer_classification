@@ -19,6 +19,7 @@ This directory contains the data required for the project. Due to file size limi
 ### 2. Use the Kaggle API to download the dataset
    
    #### Step 1: Install Kaggle API
+   
     If you haven't already, you can install the Kaggle API by running:
      
     ```bash
