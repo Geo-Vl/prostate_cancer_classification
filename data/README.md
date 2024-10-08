@@ -30,7 +30,7 @@ If you haven't already, you can install the Kaggle API by running:
   - Under the **API section**, click on **Create New API Token**.
   - This will download a file named kaggle.json, which contains your API credentials.
 
-  For Linux and MacOS:
+  **For Linux and MacOS:**
   
   Move the kaggle.json file to a hidden .kaggle directory in your home folder:
 
@@ -38,7 +38,7 @@ If you haven't already, you can install the Kaggle API by running:
     mv ~/<downloads-folder>/kaggle.json ~/.kaggle/
     chmod 600 ~/.kaggle/kaggle.json
     
-  For Windows:
+  **For Windows:**
   
   Create a folder named .kaggle in C:\Users\<Your-Username>\. Move the kaggle.json file into the .kaggle folder.
 
