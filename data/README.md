@@ -22,7 +22,6 @@ This directory contains the data required for the project. Due to file size limi
 
 If you haven't already, you can install the Kaggle API by running:
       
-    ```bash
     pip install kaggle
 
 ### Step 2: Set Up Your Kaggle API Credentials
