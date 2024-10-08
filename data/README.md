@@ -12,13 +12,13 @@ This directory contains the data required for the project. Due to file size limi
 
 ## Setting Up the Dataset
 
-1. Download the dataset from the [PANDA Challenge Dataset Page](https://www.kaggle.com/competitions/prostate-cancer-grade-assessment/data).
+### 1. Download the dataset from the [PANDA Challenge Dataset Page](https://www.kaggle.com/competitions/prostate-cancer-grade-assessment/data).
    
    OR
    
-2. Use the Kaggle API to download the dataset
+### 2. Use the Kaggle API to download the dataset
    
-   ### Step 1: Install Kaggle API
+   #### Step 1: Install Kaggle API
     If you haven't already, you can install the Kaggle API by running:
      
     ```bash
