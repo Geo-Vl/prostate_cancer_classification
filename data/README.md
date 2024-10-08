@@ -12,7 +12,7 @@ This directory contains the data required for the project. Due to file size limi
 
 <img src="https://github.com/user-attachments/assets/99f04177-925f-4f82-a95d-57183bc67328" alt="Image showing human tissue from prostate" width="300"/>
 
-  Sample image 1: Human tissue taken from prostate.
+  Sample image 1: Human tissue taken from prostate (low resolution).
   
 <img src="https://github.com/user-attachments/assets/d6c8fde2-88c1-41bd-a865-da3567f4c319" alt="Image showing human tissue from prostate" width="300"/>
 
