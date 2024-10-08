@@ -6,12 +6,32 @@ This directory contains the data required for the project. Due to file size limi
 
 - **Dataset Source**: The dataset used in this project is from the [PANDA Challenge on Kaggle](https://www.kaggle.com/competitions/prostate-cancer-grade-assessment).
 - **Dataset Contents**: The dataset includes:
-  - High-resolution pathology images of prostate tissue (`.tiff` files).
+  - High-resolution pathology images of prostate tissue (`.tiff` files). (Sample image 1)
   - Labels corresponding to the severity grade of cancer for each image (`train.csv`).
   - Mask files indicating regions of interest (`.tiff` masks).
 
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+  <div style="text-align: center; margin-right: 20px;">
+    <img src="https://github.com/user-attachments/assets/99f04177-925f-4f82-a95d-57183bc67328" alt="Image showing human tissue from prostate" width="300"/>
+    <p>Sample image 1: Human tissue taken from prostate.</p>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="https://github.com/user-attachments/assets/d6c8fde2-88c1-41bd-a865-da3567f4c319" alt="Image showing human tissue from prostate" width="300"/>
+    <p>Sample image 2: Corresponding label mask.</p>
+  </div>
+
+</div>
+
 <img src="https://github.com/user-attachments/assets/99f04177-925f-4f82-a95d-57183bc67328" alt="Image showing human tissue from prostate" width="300"/>
-    Sample image 1: Human tissue taken from prostate.
+
+  Sample image 1: Human tissue taken from prostate.
+  
+<img src="https://github.com/user-attachments/assets/d6c8fde2-88c1-41bd-a865-da3567f4c319" alt="Image showing human tissue from prostate" width="300"/>
+
+  Sample image 2: Corresponding label mask.
+
 
 ## Setting Up the Dataset
 
