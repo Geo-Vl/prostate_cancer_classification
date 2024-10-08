@@ -32,7 +32,7 @@ If you haven't already, you can install the Kaggle API by running:
 
   **For Linux and MacOS:**
   
-  Move the kaggle.json file to a hidden .kaggle directory in your home folder:
+  Move the `kaggle.json` file to a hidden `.kaggle` directory in your home folder:
 
     mkdir -p ~/.kaggle
     mv ~/<downloads-folder>/kaggle.json ~/.kaggle/
@@ -40,7 +40,7 @@ If you haven't already, you can install the Kaggle API by running:
     
   **For Windows:**
   
-  Create a folder named .kaggle in C:\Users\<Your-Username>\. Move the kaggle.json file into the .kaggle folder.
+  Create a folder named `.kaggle` in `C:\Users\<your-username>\`. Move the `kaggle.json` file into the .kaggle folder.
 
 ### Step 3: Download the Dataset
 
