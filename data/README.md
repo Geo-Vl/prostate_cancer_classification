@@ -10,6 +10,8 @@ This directory contains the data required for the project. Due to file size limi
   - Labels corresponding to the severity grade of cancer for each image (`train.csv`).
   - Mask files indicating regions of interest (`.tiff` masks).
 
+<img src="assets/99f04177-925f-4f82-a95d-57183bc67328" alt="Image showing human tissue from prostate" width="150"/>
+
 ![image](https://github.com/user-attachments/assets/99f04177-925f-4f82-a95d-57183bc67328)
 
 
