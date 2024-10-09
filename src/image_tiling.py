@@ -12,7 +12,7 @@ Key Features:
 - Uses concurrent processing to speed up tile generation and aggregation.
 
 Usage:
-- Modify `data_dir` and `image_folder` paths to point to your data directory.
+- Modify `csv_path` and `image_folder` paths to point to your data directory.
 - Adjust `tile_size`, `n_tiles`, and `tile_mode` based on your tiling requirements.
 - Run the script as a standalone program to generate and save tiles in a ZIP file.
 
