@@ -1,9 +1,7 @@
 """
-image_tiling.py
 
-This script provides utility functions for generating image tiles from high-resolution
-medical images and saving them into a compressed ZIP file format. It is designed to work 
-with images from the Prostate Cancer Grade Assessment (PANDA) dataset or similar image datasets.
+This script provides utility functions for generating image tiles from high-resolution images and saving them into a compressed ZIP file format. It is designed to work 
+with images from the Prostate Cancer Grade Assessment (PANDA) dataset or with similar large histological images where detailed analysis and unnecessary content require subdividing the images into smaller tiles. It is based on iafoss approach (https://www.kaggle.com/code/iafoss/panda-16x128x128-tiles).
 
 Key Features:
 - Generates non-overlapping tiles of a specified size from whole-slide images.
@@ -11,10 +9,35 @@ Key Features:
 - Computes channel-wise statistics (mean and variance) for each tile.
 - Uses concurrent processing to speed up tile generation and aggregation.
 
+Data Specifications:
+1. Input Images:
+   - The input images should be in .tiff format. These images are often multi-resolution and multi-level, meaning they can be accessed at different resolutions depending on the application.
+   - This script currently uses the second resolution level of the .tiff images (level 1). This level is a good balance between detail and computational efficiency.
+
+2. CSV Metadata File:
+   - A CSV file is used to specify the image IDs to be processed. The CSV file should contain:
+     - A column named `image_id` that holds the unique identifier for each image.
+
+Tile Extraction Process:
+1. Padding and Reshaping:
+   - Each image is padded to ensure that its dimensions are a multiple of the `tile_size`. This is to ensure that all tiles have consistent sizes.
+   - The image is then reshaped into smaller square regions (tiles) of size `tile_size x tile_size`.
+
+2. Sorting and Selection:
+   - If the total number of extracted tiles is greater than `n_tiles`, the tiles are sorted based on their brightness (sum of pixel values), and only the top `n_tiles` are selected. This ensures that blank or mostly empty tiles are excluded.
+
+3. Saving Tiles:
+   - The selected tiles are saved as individual .png files, either to a temporary directory or directly into a ZIP file, depending on the function being used.
+
 Usage:
 - Modify `csv_path` and `image_folder` paths to point to your data directory.
 - Adjust `tile_size`, `n_tiles`, and `tile_mode` based on your tiling requirements.
 - Run the script as a standalone program to generate and save tiles in a ZIP file.
+
+Parameters:
+- `tile_size`: The size of each square tile (e.g., 256x256 pixels).
+- `n_tiles`: The number of tiles to extract from each image.
+- `tile_mode`: Padding mode (0 for no extra padding, 1 for center padding).
 
 Dependencies:
 - pandas
@@ -23,6 +46,9 @@ Dependencies:
 - OpenCV (cv2)
 - tqdm
 - concurrent.futures
+- zipfile
+- tempfile
+- shutil
 """
 
 import os
