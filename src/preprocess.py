@@ -187,8 +187,6 @@ dblock = DataBlock(
     batch_tfms=[]
 )
 
-dls = dblock.dataloaders(df_final, bs=batch_size, collate_fn=collate)
-
 # Evaluation DataBlock (No augmentations)
 dblock_eval = DataBlock(
     blocks=(TransformBlock(type_tfms=open_images_eval), CategoryBlock),
@@ -197,6 +195,9 @@ dblock_eval = DataBlock(
     splitter=RandomSplitter(valid_pct=0)
 )
 
-dls_eval = dblock_eval.dataloaders(eval_df, bs=batch_size, collate_fn=collate)
+"""
+# The DataLoaders (dls and dls_eval) can be used directly in the training or evaluation loops as follows.
 
-# The DataLoaders (dls and dls_eval) can now be used directly in the training or evaluation loops.
+dls = dblock.dataloaders(df_final, bs=batch_size, collate_fn=collate)
+dls_eval = dblock_eval.dataloaders(eval_df, bs=batch_size, collate_fn=collate)
+"""
