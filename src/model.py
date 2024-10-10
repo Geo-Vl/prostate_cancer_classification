@@ -226,6 +226,8 @@ class FocalLoss(nn.Module):
         else:
             return F_loss
 
-
+"""
 # Example of initializing Focal Loss with class weighting
-# focal_loss = FocalLoss(alphas=scaled_alphas, gamma=2, reduction='mean')
+
+focal_loss = FocalLoss(alphas=scaled_alphas, gamma=2, reduction='mean')
+"""
