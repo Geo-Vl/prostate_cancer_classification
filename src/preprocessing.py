@@ -1,7 +1,6 @@
 """
-preprocessing.py
 
-This script handles the data loading and preprocessing steps for the Prostate Cancer Grading (PANDA). 
+This script handles the data loading and preprocessing steps for the Prostate Cancer Grade Assessment (PANDA) dataset.
 It processes image patches, loads labels, applies transformations, and prepares the dataset for training, 
 validation, and evaluation of the model. It is designed histopathology images, categorized 
 into 6 classes based on the ISUP grading system (Grades 0-5). The script also includes methods for handling 
@@ -55,8 +54,8 @@ from sklearn.model_selection import train_test_split
 # Constants
 PATCH_SIZE = 256  # Size of image patches
 N_PATCHES = 14    # Number of patches per image
-TRAIN_DIR = '/kaggle/working/train'  # Path to the folder containing training images
-LABELS_PATH = '/kaggle/input/trainlabels/train.csv'  # Path to the CSV file with image labels
+TRAIN_DIR = 'path_to_training_images_folder'  # Path to the folder containing training images
+LABELS_PATH = 'path_to_labels_csv_file.csv'  # Path to the CSV file with image labels
 
 # Normalization constants
 MEAN = torch.tensor([0.803921, 0.596078, 0.729411])
@@ -66,7 +65,12 @@ STD = torch.tensor([0.145098, 0.219607, 0.149019])
 CLASS_COUNTS = [2893, 2666, 1344, 1243, 1250, 1225]
 TOTAL_SAMPLES = sum(CLASS_COUNTS)
 ALPHAS = [TOTAL_SAMPLES / count for count in CLASS_COUNTS]
-SCALED_ALPHAS = [alpha / min(ALPHAS) for alpha in ALPHAS]
+
+# Normalize alphas
+ALPHAS_SUM = sum(ALPHAS)
+NORMALIZED_ALPHAS = [alpha / ALPHAS_SUM for alpha in ALPHAS]
+MIN_N_ALPHA = min(NORMALIZED_ALPHAS)
+SCALED_ALPHAS =  [alpha / MIN_N_ALPHA for alpha in NORMALIZED_ALPHAS]
 
 # Function to extract the zip file containing image patches
 def extract_zip(zip_file_path, target_folder):
@@ -224,16 +228,3 @@ def collate(batch):
     """
     batch = [item for sublist in batch for item in sublist]  # Flatten the list of lists
     return torch.stack(batch)
-
-# Example usage
-if __name__ == "__main__":
-    # Extract patches from zip file
-    extract_zip('/path/to/train_patches.zip', TRAIN_DIR)
-    
-    # Load dataset and split it into training/validation/evaluation sets
-    df = load_data()
-    df_final, eval_df = split_data(df)
-
-    print(f"Training samples: {len(df_final[df_final['split'] == 0])}")
-    print(f"Validation samples: {len(df_final[df_final['split'] == 1])}")
-    print(f"Evaluation samples: {len(eval_df)}")
