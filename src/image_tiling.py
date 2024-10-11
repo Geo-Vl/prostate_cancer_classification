@@ -62,12 +62,14 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import tempfile
 import shutil
 
-# Constants for tiling parameters
+"""
+# Tiling parameters
 tile_size = 256
 n_tiles = 14
 tile_mode = 0
+"""
 
-def get_tiles(img, tile_size, n_tiles, mode=0):
+def get_tiles(img, tile_size, n_tiles, mode):
     """
     Generate tiles from an image.
     
