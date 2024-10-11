@@ -23,20 +23,20 @@ Dataset Information:
 - These values can be customized by the user if preferred.
 
 Dependencies:
-- torch (PyTorch) for handling tensors and applying transformations.
+- torch
 - torchvision for image transformations.
-- pandas for managing the dataset and CSV file operations.
-- numpy for numerical operations.
-- sklearn (scikit-learn) for data splitting.
-- PIL (Python Imaging Library) for opening and handling image files.
-- fastai for additional deep learning utilities (optional).
+- pandas
+- numpy
+- sklearn
+- PIL
+- fastai
 
 
 How to Use:
 1. Ensure the paths to the dataset (images) and labels (CSV file) are correctly specified.
-2. Call the `extract_zip()` function to extract image patches if not already extracted (from `utils.py`).
+2. Modify the size of train, validation, and evaluation sets, if needed.
 3. Load and preprocess the data using the `get_x()`, `get_y()`, `open_images()` and `custom_splitter()` functions.
-4. Customize the normalization parameters if different dataset statistics are preferred and modify constants like patch_size, batch_size according to your setup.
+4. Customize the normalization parameters, if different dataset statistics are preferred and modify constants like patch_size, batch_size according to your setup.
 5. Integrate with your model training script to feed the processed data into your neural network.
 """
 
