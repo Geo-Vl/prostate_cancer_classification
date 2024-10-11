@@ -15,12 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Step 2: List files in the src directory to verify the file exists
+      # Step 2: List files in src directory to verify the file exists
       - name: List files in src directory
         run: |
           ls -la src/
 
-      # Step 3: Create the notebooks folder if it doesn't exist
+      # Step 3: Create the notebooks directory if it doesn't exist
       - name: Create notebooks directory if it doesn't exist
         run: |
           mkdir -p notebooks
@@ -30,7 +30,19 @@ jobs:
         run: |
           mv src/kaggle_notebook.ipynb notebooks/kaggle_notebook.ipynb
 
-      # Step 5: Verify the file was moved
-      - name: List files in notebooks directory
+      # Step 5: Configure git
+      - name: Set up Git user
         run: |
-          ls -la notebooks/
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      # Step 6: Commit the changes
+      - name: Commit file move
+        run: |
+          git add .
+          git commit -m "Move kaggle_notebook.ipynb from src to notebooks"
+
+      # Step 7: Push the changes back to the repository
+      - name: Push changes
+        run: |
+          git push origin main
