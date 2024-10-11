@@ -18,4 +18,4 @@ jobs:
       # Step 2: Move the file
       - name: Move file from src to notebooks
         run: |
-          mv src/file.txt notebooks/file.txt
+          mv src/kaggle_notebook.ipynb notebooks/kaggle_notebook.ipynb
