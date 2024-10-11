@@ -1,7 +1,7 @@
 name: Move file
 
 on:
-  push: 
+  push:
     branches:
       - main
   workflow_dispatch:
@@ -15,7 +15,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Step 2: Move the file
+      # Step 2: List files in the src directory to verify the file exists
+      - name: List files in src directory
+        run: |
+          ls -la src/
+
+      # Step 3: Create the notebooks folder if it doesn't exist
+      - name: Create notebooks directory if it doesn't exist
+        run: |
+          mkdir -p notebooks
+
+      # Step 4: Move the file
       - name: Move file from src to notebooks
         run: |
           mv src/kaggle_notebook.ipynb notebooks/kaggle_notebook.ipynb
+
+      # Step 5: Verify the file was moved
+      - name: List files in notebooks directory
+        run: |
+          ls -la notebooks/
