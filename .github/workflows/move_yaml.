@@ -1,0 +1,21 @@
+name: Move file
+
+on:
+  push: 
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  move-file-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository so we can access the files
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Move the file
+      - name: Move file from src to notebooks
+        run: |
+          mv src/file.txt notebooks/file.txt
