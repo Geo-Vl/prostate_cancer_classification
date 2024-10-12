@@ -1,6 +1,6 @@
 # Data Directory
 
-This directory contains the data required for the project. Due to file size limitations, the dataset is not included in this repository. Please follow the instructions below to download and set up the dataset.
+This directory contains the data required for the project. Due to file size limitations, the dataset is not included in this repository. Please follow the instructions below to set up and download the dataset.
 
 ## Dataset Information
 
