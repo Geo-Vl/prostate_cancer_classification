@@ -1,7 +1,7 @@
 """
 
 This script provides utility functions for generating image patches from high-resolution images and saving them into a compressed ZIP file format.
-It is designed to work with images from the Prostate Cancer Grade Assessment (PANDA) dataset or with similar large histological images, 
+It is designed to work with images from the Prostate Cancer Grade Assessment (PANDA) dataset or with similar sets contsaining large histological images, 
 where detailed analysis and unnecessary content require subdividing the images into smaller patches. It is based on iafoss approach (https://www.kaggle.com/code/iafoss/panda-16x128x128-tiles).
 
 Key Features:
