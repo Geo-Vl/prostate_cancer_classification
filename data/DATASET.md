@@ -6,9 +6,9 @@ This directory contains the data required for the project. Due to file size limi
 
 - **Dataset Source**: The dataset used in this project is from the [PANDA Challenge on Kaggle](https://www.kaggle.com/competitions/prostate-cancer-grade-assessment).
 - **Dataset Contents**: The dataset includes:
-  - High-resolution pathology images of prostate tissue (`.tiff` files). (Sample image 1)
+  - High-resolution pathology images of prostate tissue (`.tiff` files).
   - Labels corresponding to the severity grade of cancer for each image (`train.csv`).
-  - Mask files indicating regions of interest (`.tiff` masks). (Sample image 2)
+  - Mask files indicating regions of interest (`.tiff` masks). 
 
 ## Setting Up the Dataset
 
@@ -18,13 +18,13 @@ This directory contains the data required for the project. Due to file size limi
    
 **2. Use the Kaggle API to download the dataset**
 
-### Step 1: Install Kaggle API
+#### Step 1: Install Kaggle API
 
 If you haven't already, you can install the Kaggle API by running:
       
     pip install kaggle
 
-### Step 2: Set Up Your Kaggle API Credentials
+#### Step 2: Set Up Your Kaggle API Credentials
 
   - Go to your Kaggle account and navigate to **Account** settings.
   - Under the **API section**, click on **Create New API Token**.
@@ -42,7 +42,7 @@ If you haven't already, you can install the Kaggle API by running:
   
   Create a folder named `.kaggle` in `C:\Users\<your-username>\`. Move the `kaggle.json` file into the .kaggle folder.
 
-### Step 3: Download the Dataset
+#### Step 3: Download the Dataset
 
 Use the following command:
 
