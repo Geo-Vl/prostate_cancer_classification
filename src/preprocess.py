@@ -1,7 +1,7 @@
 """
 
-This script handles the data loading and preprocessing steps for the Prostate Cancer Grade Assessment (PANDA) dataset
-or generally histopathology images for training a deep learning model.
+This script handles the data loading and preprocessing steps for the Prostate Cancer Grade Assessment (PANDA) dataset,
+or more generally, patch-divided histopathological images used in training deep learning models.
 It processes image patches, loads labels, applies transformations, and prepares the dataset for training, 
 validation, and evaluation of the model. It is designed for histopathology images, categorized 
 into 6 classes based on the ISUP grading system (Grades 0-5). The script also includes methods for handling 
@@ -52,7 +52,10 @@ from torchvision import transforms
 from fastai.data.block import DataBlock, TransformBlock, CategoryBlock
 from fastai.data.transforms import RandomSplitter
 
+"""
+
 # Constants
+
 patch_size = 256  # Size of image patches
 batch_size = 10  # Batch size for DataLoader
 n_patches = 14  # Number of patches per image
@@ -60,11 +63,16 @@ TRAIN = 'path_to_training_directory'  # Path to training image directory
 LABELS = 'path_to_labels_csv_file.csv'  # Path to CSV file with image labels
 
 # Normalization values (mean and std) for the dataset, calculated based on image statistics
+
 mean = torch.tensor([0.803921, 0.596078, 0.729411])  # Mean pixel values for RGB channels
 std = torch.tensor([0.145098, 0.219607, 0.149019])   # Standard deviation for RGB channels
 
 # Class distribution used for class weighting
+
 class_counts = [2893, 2666, 1344, 1243, 1250, 1225]
+
+"""
+
 total = sum(class_counts)
 
 # Compute the alphas for class weighting
@@ -196,8 +204,10 @@ dblock_eval = DataBlock(
 )
 
 """
+
 # The DataLoaders (dls and dls_eval) can be used directly in the training or evaluation loops as follows.
 
 dls = dblock.dataloaders(df_final, bs=batch_size, collate_fn=collate)
 dls_eval = dblock_eval.dataloaders(eval_df, bs=batch_size, collate_fn=collate)
+
 """
