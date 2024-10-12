@@ -1,7 +1,7 @@
 """
 
 This script defines a deep learning model architecture, custom activation function, patch aggregation 
-mechanism, and a custom loss function tailored for histopathological image analysis. The model is based 
+mechanism, and a custom loss function tailored for patch-based histopathological image analysis. The model is based 
 on a modified DenseNet with Mish activation and patch-based aggregation. A Focal Loss function is 
 implemented for handling class imbalances.
 
