@@ -1,7 +1,7 @@
 """
 
 This script handles the data loading and preprocessing steps for the Prostate Cancer Grade Assessment (PANDA) dataset,
-or more generally, patch-divided histopathological images used in training deep learning models.
+or more generally, patch-divided histopathological image sets. Tailored for deep learning models.
 It processes image patches, loads labels, applies transformations, and prepares the dataset for training, 
 validation, and evaluation of the model. It is designed for histopathology images, categorized 
 into 6 classes based on the ISUP grading system (Grades 0-5). The script also includes methods for handling 
