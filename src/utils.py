@@ -63,7 +63,7 @@ def unzip_data(zip_file_path, target_folder):
 # --------------------------------------------------
 # Utility Function: Select and display random image patches
 # --------------------------------------------------
-def display_random_patches(df_final, get_x, open_images, mean, std, patch_size=256):
+def display_random_patches(df_final, get_x, open_images, mean, std):
     """
     Selects a random image, loads its patches, and displays them in a grid format.
     Args:
@@ -72,7 +72,6 @@ def display_random_patches(df_final, get_x, open_images, mean, std, patch_size=2
     - open_images (function): Function to load image patches from file paths
     - mean (Tensor): Mean values for normalization
     - std (Tensor): Standard deviation values for normalization
-    - patch_size (int, optional): Size of each image patch. Defaults to 256.
     
     Returns:
     - None
