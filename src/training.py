@@ -1,5 +1,4 @@
 """
-
 This script handles the training process for a DenseNet-based model using the FastAI library.
 It includes the definition of the learner, usage of custom loss functions, optimizers, and metrics,
 as well as callbacks for early stopping (based on valid loss values) and model saving (based on cohen kappa score).
