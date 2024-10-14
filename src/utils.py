@@ -19,7 +19,7 @@ Dependencies:
 
 Instructions:
 1. Provide the correct paths for data loading and unzipping.
-2. Ensure that the pre-processing is consistent with the respective from the current project, otherwise adapt (e.g. dl=dls_eval.train).
+2. Ensure that the pre-processing is consistent with the current project's process, otherwise adapt (e.g. dl=dls_eval.train).
 3. Each utility is modular and can be integrated independently into the overall pipeline.
 """
 
