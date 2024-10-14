@@ -1,5 +1,4 @@
 """
-
 This script defines a deep learning model architecture, custom activation function, patch aggregation 
 mechanism and a custom loss function tailored for patch-based histopathological image analysis. The model is based 
 on a modified DenseNet with Mish activation and patch aggregation. A Focal Loss function is 
@@ -21,7 +20,6 @@ Instructions:
 1. Ensure all dependencies are installed.
 2. Customize the gamma and reduction in Focal Loss if necessary.
 3. Import this script as a module in your training pipeline or test it independently.
-
 """
 
 import torch
