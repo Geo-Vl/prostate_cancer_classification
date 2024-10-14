@@ -1,5 +1,4 @@
 """
-
 This script provides utility functions for generating image patches from high-resolution images and saving them into a compressed ZIP file format.
 It is designed to work with images from the Prostate Cancer Grade Assessment (PANDA) dataset or with similar sets contsaining large histological images, 
 where detailed analysis and unnecessary content require subdividing the images into smaller patches. It is based on iafoss approach (https://www.kaggle.com/code/iafoss/panda-16x128x128-tiles).
@@ -62,13 +61,6 @@ from tqdm import tqdm
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import tempfile
 import shutil
-
-"""
-# Patches parameters
-patch_size = 256
-n_patches = 14
-patch_mode = 0
-"""
 
 def get_patches(img, patch_size, n_patches, mode):
     """
