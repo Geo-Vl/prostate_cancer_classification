@@ -1,5 +1,4 @@
 """
-
 This script contains various utility functions and classes used throughout the project for
 tasks like unzipping data, loading and visualizing images, calculating evaluation metrics,
 and processing predictions. Functions are consistent with the split in the pre-processing part of the current project.
