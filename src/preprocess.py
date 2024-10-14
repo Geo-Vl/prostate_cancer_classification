@@ -13,14 +13,6 @@ Key functionalities include:
 - Managing class imbalance by computing class weights (alphas) based on the sample distribution.
 - Custom collate function for batching images.
 
-Dataset Information:
-- The dataset is structured to classify cancer grades (ISUP Grade 0-5), totaling 6 classes.
-- Class imbalance is handled by computing class-specific weights based on the number of samples per class.
-- Mean and standard deviation values for the RGB channels of the PANDA dataset have been precomputed and are:
-  - Mean: [0.803921, 0.596078, 0.729411]
-  - Standard Deviation: [0.145098, 0.219607, 0.149019]
-- These values can be customized by the user if preferred.
-
 Dependencies:
 - torch
 - torchvision for image transformations.
@@ -32,11 +24,18 @@ Dependencies:
 
 
 How to Use:
-1. Ensure the paths to the dataset (images) and labels (CSV file) are correctly specified.
+1. Define the following variables with appropriate values for your dataset:
+  - TRAIN: Path to the directory containing the training image patches.
+  - LABELS: Path to the CSV file with image labels.
+  - patch_size: Size of the image patches (e.g., 256).
+  - batch_size: Number of samples in each batch during training (adjust based on your hardware).
+  - n_patches: Number of patches extracted per image.
+  - mean: Precomputed mean pixel values for the RGB channels of the dataset.
+  - std: Precomputed standard deviation values for the RGB channels.
+  - class_counts: List of class counts, where each element represents the number of samples in each class. (This is used to handle class imbalance by computing class weights.)
 2. Modify the size of train, validation, and evaluation sets, if needed.
 3. Load and preprocess the data using the `get_x()`, `get_y()`, `open_images()` and `custom_splitter()` functions.
-4. Customize the normalization parameters, if different dataset statistics are preferred and modify constants like patch_size, batch_size according to your setup.
-5. Integrate with your model training script to feed the processed data into your neural network.
+4. Integrate with your model training script to feed the processed data into your neural network.
 """
 
 
@@ -51,30 +50,8 @@ from torchvision import transforms
 from fastai.data.block import DataBlock, TransformBlock, CategoryBlock
 from fastai.data.transforms import RandomSplitter
 
-"""
-
-# Constants
-
-patch_size = 256  # Size of image patches
-batch_size = 10  # Batch size for DataLoader
-n_patches = 14  # Number of patches per image
-TRAIN = 'path_to_training_directory'  # Path to training image directory
-LABELS = 'path_to_labels_csv_file.csv'  # Path to CSV file with image labels
-
-# Normalization values (mean and std) for the dataset, calculated based on image statistics
-
-mean = torch.tensor([0.803921, 0.596078, 0.729411])  # Mean pixel values for RGB channels
-std = torch.tensor([0.145098, 0.219607, 0.149019])   # Standard deviation for RGB channels
-
-# Class distribution used for class weighting
-
-class_counts = [2893, 2666, 1344, 1243, 1250, 1225]
-
-"""
-
-total = sum(class_counts)
-
 # Compute the alphas for class weighting
+total = sum(class_counts)
 alphas = [total / count for count in class_counts]
 alphas_sum = sum(alphas)
 normalized_alphas = [alpha / alphas_sum for alpha in alphas]
